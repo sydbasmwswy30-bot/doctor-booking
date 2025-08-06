@@ -1,0 +1,18 @@
+import { addAppointment } from "./firebase.js";
+
+document.getElementById('bookingForm').addEventListener('submit', async function(e){
+    e.preventDefault();
+    const data = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        email: document.getElementById('email').value,
+        hospital: document.getElementById('hospital').value,
+        doctor: document.getElementById('doctor').value,
+        datetime: document.getElementById('datetime').value,
+        status: "منتظر تایید"
+    };
+    await addAppointment(data);
+    document.getElementById('successMessage').style.display='block';
+    setTimeout(()=>{document.getElementById('successMessage').style.display='none';},5000);
+    this.reset();
+});
