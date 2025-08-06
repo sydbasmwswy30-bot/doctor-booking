@@ -1,0 +1,27 @@
+// اتصال Firebase Firestore
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+// تنظیمات Firebase خودت را وارد کن
+const firebaseConfig = {
+  apiKey: "API_KEY",
+  authDomain: "PROJECT_ID.firebaseapp.com",
+  projectId: "PROJECT_ID",
+  storageBucket: "PROJECT_ID.appspot.com",
+  messagingSenderId: "SENDER_ID",
+  appId: "APP_ID"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// ثبت نوبت
+export async function addAppointment(data){
+    await addDoc(collection(db, "appointments"), data);
+}
+
+// دریافت همه نوبت‌ها
+export async function getAppointments(){
+    const querySnapshot = await getDocs(collection(db, "appointments"));
+    return querySnapshot.docs.map(doc => doc.data());
+}
