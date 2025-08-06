@@ -1,0 +1,14 @@
+// اینجا می‌تونی Firebase Auth یا سرور Node.js برای JWT استفاده کنی
+document.getElementById('loginForm').addEventListener('submit', async function(e){
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // بررسی ورود امن (نمونه با alert)
+    if(email==="doctor@test.com" && password==="123456"){
+        alert("ورود موفق! به داشبورد بروید");
+        window.location.href="dashboard.html";
+    }else{
+        alert("ایمیل یا رمز اشتباه است");
+    }
+});
