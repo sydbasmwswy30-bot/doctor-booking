@@ -1,0 +1,12 @@
+doctor-booking/
+│
+├─ index.html        ← فرم رزرو نوبت
+├─ style.css         ← طراحی و رنگ‌بندی
+├─ script.js         ← ثبت نوبت در Firebase
+├─ login.html        ← ورود پزشک/مدیر
+├─ login.js          ← JWT / Firebase Auth
+├─ dashboard.html    ← داشبورد پزشک
+├─ dashboard.js      ← مدیریت نوبت‌ها، تایید/لغو
+├─ firebase.js       ← اتصال Firebase
+├─ security.js       ← JWT + bcrypt
+├─ README.md         ← توضیحات و اجرا
