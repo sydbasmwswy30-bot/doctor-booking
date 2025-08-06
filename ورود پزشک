@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ورود پزشک</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h2>ورود پزشک / مدیر</h2>
+<form id="loginForm">
+<input type="email" id="email" placeholder="ایمیل" required>
+<input type="password" id="password" placeholder="رمز عبور" required>
+<button type="submit">ورود</button>
+</form>
+<div id="loginMessage"></div>
+</main>
+<script type="module" src="login.js"></script>
+</body>
+</html>
