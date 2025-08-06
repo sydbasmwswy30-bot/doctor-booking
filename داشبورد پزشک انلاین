@@ -1,0 +1,21 @@
+import { getAppointments } from "./firebase.js";
+
+async function loadAppointments(){
+    const appointments = await getAppointments();
+    const table = document.getElementById('appointmentsTable');
+
+    // حذف سطرهای قبلی بجز هدر
+    table.innerHTML = `<tr><th>نام بیمار</th><th>شماره</th><th>بیمارستان</th><th>پزشک</th><th>تاریخ/ساعت</th><th>وضعیت</th></tr>`;
+
+    appointments.forEach(app => {
+        const row = table.insertRow();
+        row.insertCell(0).innerText = app.name;
+        row.insertCell(1).innerText = app.phone;
+        row.insertCell(2).innerText = app.hospital;
+        row.insertCell(3).innerText = app.doctor;
+        row.insertCell(4).innerText = app.datetime;
+        row.insertCell(5).innerText = app.status;
+    });
+}
+
+loadAppointments();
